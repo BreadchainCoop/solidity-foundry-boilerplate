@@ -50,6 +50,7 @@
   <dt>Commit Messages</dt>
   <dd>Example: `feat: added liquidation method to buttered-bread contract`</dt>
   <dd>Example: `test: added unit tests`</dt>
+  <dd>List of commit types: `[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]`</dt>
   <dd>For more specific details, checkout `https://www.conventionalcommits.org/en/v1.0.0-beta.4/`</dd>
 </dl>
 
