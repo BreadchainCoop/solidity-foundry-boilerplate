@@ -25,12 +25,14 @@ out = 'out-via-ir'
 src = 'src/interfaces/'
 
 [fuzz]
-runs = 1000
+runs = 256
 
 [rpc_endpoints]
-mainnet = "${MAINNET_RPC}"
-sepolia = "${SEPOLIA_RPC}"
+gnosis = 'https://rpc.gnosis.gateway.fm'
+optimism = 'https://mainnet.optimism.io'
+sepolia = 'https://rpc.sepolia.io'
 
 [etherscan]
-mainnet = { key = "${ETHERSCAN_API_KEY}" }
+gnosis = { key = "${ETHERSCAN_API_KEY}" }
+optimism = { key = "${ETHERSCAN_API_KEY}" }
 sepolia = { key = "${ETHERSCAN_API_KEY}" }

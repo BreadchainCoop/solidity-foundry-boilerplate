@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.23;
 
+import {IERC20} from '@openzeppelin/token/ERC20/IERC20.sol';
 import {Greeter, IGreeter} from 'contracts/Greeter.sol';
 import {Test} from 'forge-std/Test.sol';
-import {IERC20} from 'forge-std/interfaces/IERC20.sol';
 
 contract UnitGreeter is Test {
   address internal _owner = makeAddr('owner');

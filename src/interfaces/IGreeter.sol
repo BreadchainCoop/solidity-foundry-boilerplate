@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.23;
 
-import {IERC20} from 'forge-std/interfaces/IERC20.sol';
+import {IERC20} from '@openzeppelin/token/ERC20/IERC20.sol';
 
 /**
  * @title Greeter Contract
- * @author Wonderland
+ * @author Breadchain
  * @notice This is a basic contract created in order to portray some
  * best practices and foundry functionality.
  */

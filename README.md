@@ -6,6 +6,48 @@
 
 <br />
 
+<div align="center">Forked by Breadchain</div>
+
+## Breadchain Developers
+
+<dl>
+  <dt>Basic Setup</dt>
+  <dd>Use `yarn add` / `yarn build`, not `forge install` / `forge build` etc.</dd>
+  <dd>Use yarn scripts, not forge scripts (Look at the `package.json`!).</dd>
+  <dd>Add scripts to the `package.json` as needed.</dd>
+
+  <dt>Required Contracts</dt>
+  <dd>Every contract is required to have a full interface.</dd>
+  <dd>The contract should inherit it's own interface.</dd>
+  <dd>The contract should reference it's interface with `@inheritdoc`</dd>
+  <dd>The interface should contain other tags, including `@notice, @param, @return, @dev`</dd>
+  <dd>The contract should be free of clutter, whereas the interface should act as a guide to the contract.</dd>
+  <dd>Errors, Events, and Structs should be located in interfaces, not in contracts.</dd>
+
+  <dt>Required Testing</dt>
+  <dd><b>Integration/E2E</b> - should fork chain intended for deployment (likely gnosis or optimism) and should use the deploy script found in `Script/Common.sol` in the `test/integration/IntegrationBase.sol`.</dd>
+  <dd><b>Unit</b> - should test and branch all contract functionality, with mock contracts or mock function calls added as needed to mock inter-contract calls. `.tree` files are there for example, but not necessary.</dd>
+
+  <dt>Test Coverage</dt>
+  <dd>Run `yarn coverage` to generate a coverage report for tests</dd>
+  <dd>Unit and Integration should be 100%, with branch testing reasonably high</dd>
+
+  <dt>Advice for Writing Tests</dt>
+  <dd>Make use of `setUp` overrides and inheritance to cut down on redundant setups.</dd>
+  <dd>Make use of helper functions with obvious names (e.g. `_fundUsersWithTokens()`) to reduce complexity for other developers that will review the code.</dd>
+  <dd>Make use of Modifiers within test contracts to constrain fuzzing variables or any other use case</dd>
+  <dd>Make multiple testing contracts in one file that all test the same contract (e.g. E2EGreeterTestSetup, E2EGreeterTestAccessControl, E2EGreeterTestCore, etc.) where contracts inherit the same base setup.</dd>
+  <dd>Make use of constant variables placed in base test setup, so that updating test variables is simple and easy.</dd>
+  <dd>Keep tests organized! Break complexity down and make it readable!</dd>
+
+  <dt>Required Formatting</dt>
+  <dd>Commits cannot be made without passing the linter!</dd>
+  <dd>Run `yarn lint:check`</dd>
+  <dd>Check `package.json` for more linter commands</dd>
+  <dd>Internal variables start with an underscore ('_exampleOfInternalVar').</dd>
+  <dd>Run `lint:natspec` to check contracts and interfaces for correct natspec.</dd>
+</dl>
+
 ## Features
 
 <dl>
@@ -113,7 +155,7 @@ source .env
 Import your private keys into Foundry's encrypted keystore:
 
 ```bash
-cast wallet import $MAINNET_DEPLOYER_NAME --interactive
+cast wallet import $OPTIMISM_DEPLOYER_NAME --interactive
 ```
 
 ```bash

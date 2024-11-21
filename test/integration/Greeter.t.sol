@@ -4,13 +4,25 @@ pragma solidity 0.8.23;
 import {IntegrationBase} from 'test/integration/IntegrationBase.sol';
 
 contract IntegrationGreeter is IntegrationBase {
+  string internal _newGreeting;
+
+  function setUp() public override {
+    /// @dev override for more specific setup
+    super.setUp();
+    _newGreeting = 'Hello, Breadchain!';
+  }
+
   function test_Greet() public {
-    uint256 _whaleBalance = _dai.balanceOf(_daiWhale);
+    DeploymentParams memory _params = _deploymentParams[block.chainid];
 
-    vm.prank(_daiWhale);
-    (string memory _greeting, uint256 _balance) = _greeter.greet();
+    (string memory _initialGreeting, uint256 _balance) = greeter.greet();
+    assertEq(_params.greeting, _initialGreeting);
+    assertEq(INIT_BALANCE, _balance);
 
-    assertEq(_whaleBalance, _balance);
-    assertEq(_initialGreeting, _greeting);
+    vm.prank(owner);
+    greeter.setGreeting(_newGreeting);
+
+    (string memory _currentGreeting,) = greeter.greet();
+    assertEq(_currentGreeting, greeter.greeting());
   }
 }
