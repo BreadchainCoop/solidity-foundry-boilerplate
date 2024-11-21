@@ -12,7 +12,7 @@
 
 <dl>
   <dt>Basic Setup</dt>
-  <li>Use `yarn add` / `yarn build`, not `forge install` / `forge build` etc.</li>
+  <li>Use `yarn add`, not `forge install`</li>
   <li>Use yarn scripts, not forge scripts (Look at the `package.json`!).</li>
   <li>Add scripts to the `package.json` as needed.</li>
 
