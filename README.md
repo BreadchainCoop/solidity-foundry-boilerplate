@@ -46,7 +46,15 @@
   <dd>Check `package.json` for more linter commands</dd>
   <dd>Internal variables start with an underscore ('_exampleOfInternalVar').</dd>
   <dd>Run `lint:natspec` to check contracts and interfaces for correct natspec.</dd>
+
+  <dt>Commit Messages</dt>
+  <dd>Example: `feat: added liquidation method to buttered-bread contract`</dt>
+  <dd>Example: `test: added unit tests`</dt>
+  <dd>For more specific details, checkout `https://www.conventionalcommits.org/en/v1.0.0-beta.4/`</dd>
 </dl>
+
+<div align="center">End of Breadchain Notes</div>
+<div align="center">Continue Reading Wonderland Outline</div>
 
 ## Features
 
