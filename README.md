@@ -12,46 +12,46 @@
 
 <dl>
   <dt>Basic Setup</dt>
-  <dd>Use `yarn add` / `yarn build`, not `forge install` / `forge build` etc.</dd>
-  <dd>Use yarn scripts, not forge scripts (Look at the `package.json`!).</dd>
-  <dd>Add scripts to the `package.json` as needed.</dd>
+  <li>Use `yarn add` / `yarn build`, not `forge install` / `forge build` etc.</li>
+  <li>Use yarn scripts, not forge scripts (Look at the `package.json`!).</li>
+  <li>Add scripts to the `package.json` as needed.</li>
 
   <dt>Required Contracts</dt>
-  <dd>Every contract is required to have a full interface.</dd>
-  <dd>The contract should inherit it's own interface.</dd>
-  <dd>The contract should reference it's interface with `@inheritdoc`</dd>
-  <dd>The interface should contain other tags, including `@notice, @param, @return, @dev`</dd>
-  <dd>The contract should be free of clutter, whereas the interface should act as a guide to the contract.</dd>
-  <dd>Errors, Events, and Structs should be located in interfaces, not in contracts.</dd>
+  <li>Every contract is required to have a full interface.</li>
+  <li>The contract should inherit it's own interface.</li>
+  <li>The contract should reference it's interface with `@inheritdoc`</li>
+  <li>The interface should contain other tags, including `@notice, @param, @return, @dev`</li>
+  <li>The contract should be free of clutter, whereas the interface should act as a guide to the contract.</li>
+  <li>Errors, Events, and Structs should be located in interfaces, not in contracts.</li>
 
   <dt>Required Testing</dt>
-  <dd><b>Integration/E2E</b> - should fork chain intended for deployment (likely gnosis or optimism) and should use the deploy script found in `Script/Common.sol` in the `test/integration/IntegrationBase.sol`.</dd>
-  <dd><b>Unit</b> - should test and branch all contract functionality, with mock contracts or mock function calls added as needed to mock inter-contract calls. `.tree` files are there for example, but not necessary.</dd>
+  <li><b>Integration/E2E</b> - should fork chain intended for deployment (likely gnosis or optimism) and should use the deploy script found in `Script/Common.sol` in the `test/integration/IntegrationBase.sol`.</li>
+  <li><b>Unit</b> - should test and branch all contract functionality, with mock contracts or mock function calls added as needed to mock inter-contract calls. `.tree` files are there for example, but not necessary.</li>
 
   <dt>Test Coverage</dt>
-  <dd>Run `yarn coverage` to generate a coverage report for tests</dd>
-  <dd>Unit and Integration should be 100%, with branch testing reasonably high</dd>
+  <li>Run `yarn coverage` to generate a coverage report for tests</li>
+  <li>Unit and Integration should be 100%, with branch testing reasonably high</li>
 
   <dt>Advice for Writing Tests</dt>
-  <dd>Make use of `setUp` overrides and inheritance to cut down on redundant setups.</dd>
-  <dd>Make use of helper functions with obvious names (e.g. `_fundUsersWithTokens()`) to reduce complexity for other developers that will review the code.</dd>
-  <dd>Make use of Modifiers within test contracts to constrain fuzzing variables or any other use case</dd>
-  <dd>Make multiple testing contracts in one file that all test the same contract (e.g. E2EGreeterTestSetup, E2EGreeterTestAccessControl, E2EGreeterTestCore, etc.) where contracts inherit the same base setup.</dd>
-  <dd>Make use of constant variables placed in base test setup, so that updating test variables is simple and easy.</dd>
-  <dd>Keep tests organized! Break complexity down and make it readable!</dd>
+  <li>Make use of `setUp` overrides and inheritance to cut down on redundant setups.</li>
+  <li>Make use of helper functions with obvious names (e.g. `_fundUsersWithTokens()`) to reduce complexity for other developers that will review the code.</li>
+  <li>Make use of Modifiers within test contracts to constrain fuzzing variables or any other use case</li>
+  <li>Make multiple testing contracts in one file that all test the same contract (e.g. E2EGreeterTestSetup, E2EGreeterTestAccessControl, E2EGreeterTestCore, etc.) where contracts inherit the same base setup.</li>
+  <li>Make use of constant variables placed in base test setup, so that updating test variables is simple and easy.</li>
+  <li>Keep tests organized! Break complexity down and make it readable!</li>
 
   <dt>Required Formatting</dt>
-  <dd>Commits cannot be made without passing the linter!</dd>
-  <dd>Run `yarn lint:check`</dd>
-  <dd>Check `package.json` for more linter commands</dd>
-  <dd>Internal variables start with an underscore ('_exampleOfInternalVar').</dd>
-  <dd>Run `lint:natspec` to check contracts and interfaces for correct natspec.</dd>
+  <li>Commits cannot be made without passing the linter!</li>
+  <li>Run `yarn lint:check`</li>
+  <li>Check `package.json` for more linter commands</li>
+  <li>Internal variables start with an underscore ('_exampleOfInternalVar').</li>
+  <li>Run `lint:natspec` to check contracts and interfaces for correct natspec.</li>
 
   <dt>Commit Messages</dt>
-  <dd>Example: `feat: added liquidation method to buttered-bread contract`</dt>
-  <dd>Example: `test: added unit tests`</dt>
-  <dd>List of commit types: `[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]`</dt>
-  <dd>For more specific details, checkout `https://www.conventionalcommits.org/en/v1.0.0-beta.4/`</dd>
+  <li>Example: `feat: added liquidation method to buttered-bread contract`</dt>
+  <li>Example: `test: added unit tests`</dt>
+  <li>List of commit types: `[build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]`</dt>
+  <li>For more specific details, checkout `https://www.conventionalcommits.org/en/v1.0.0-beta.4/`</li>
 </dl>
 
 <div align="center">End of Breadchain Notes</div>
